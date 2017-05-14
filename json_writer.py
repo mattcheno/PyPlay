@@ -2,11 +2,12 @@
 import json
 
 fib = [0, 1]
+filename = 'fib.json'
 
 for i in range(0,50):
-	#next = fib[i] + fib[i + 1]
-	#print(next)
-	#fib.append(next)
 	fib.append(fib[i] + fib[i + 1])
 
-print(fib)#<<
+print(fib)
+
+with open(filename, 'w') as f_obj:
+	json.dump(fib, f_obj) #<<
